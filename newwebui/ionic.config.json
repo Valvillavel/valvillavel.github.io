@@ -1,0 +1,10 @@
+{
+  "name": "newwebui",
+  "integrations": {
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
+  },
+  "type": "angular"
+}

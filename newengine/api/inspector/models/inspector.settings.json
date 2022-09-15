@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inspectors",
+  "info": {
+    "name": "inspector",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "company": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "biginteger"
+    },
+    "mobile": {
+      "type": "biginteger"
+    },
+    "user": {
+      "via": "inspector",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "avatar": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "grids",
+  "info": {
+    "name": "grid",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "ambients": {
+      "type": "json"
+    },
+    "systems": {
+      "type": "json"
+    }
+  }
+}

@@ -1,0 +1,113 @@
+.indicator-container {
+    padding-left: 0.5rem;
+    padding-bottom: 0.4rem;
+    --background:var(--event-calendar);
+  }
+   
+  .event-indicator {
+    background: var(--event-calendar);
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    display: table-cell;
+  }
+   
+  :host ::ng-deep {
+    .monthview-primary-with-event {
+      background-color: var(--date-selected-letter) !important;
+    }
+   
+    .monthview-selected {
+        font-weight: bold;
+        background-color: var(--date-selected) !important;
+        color: white(241, 246, 247) !important;
+    }
+    
+  }
+ 
+  .with-event {
+    background-color: var(--date-event);
+    border-radius: 15px;
+  }
+  .page-breadcrumb {
+    display: inline;
+}
+.page-title{
+    color:var(--page-titles);
+    font-family:'Open Sans';
+    font-size:26px;
+    font-weight:lighter;
+    letter-spacing:-1px;
+    line-height:26px;
+    margin:0px 0px 20px;
+}
+h2{
+    color:var(--page-bar-letters);
+    display:inline;
+    font-family:'Open Sans';
+    font-size:32px;
+    line-height:18.5714px;
+    text-align:left;
+}
+.page-bar{
+    padding-left: 20px;
+    color:var(--page-bar);
+}
+.page-bar ion-icon{
+    font-size:16px;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
+    color:var(--page-bar-letters);
+}
+.page-title{
+    margin-left: 15px;
+}
+
+.section-buttons .button{
+    --border-radius: 5px;
+    --border-style: solid;
+    --border-width: 2px;
+    --color: var(--button-color-calendar);
+    --background:var(--font-color);
+    --border-color: var(--button-border-calendar);
+    border-radius: 5px;
+    font-family:"Open Sans";
+    font-size:12px;
+    font-weight:600;
+    
+}
+.button{
+    --background:var(--button-color);
+    border-radius: 5px;
+    font-family:"Open Sans";
+    font-size:12px;
+    font-weight:600;
+}
+.section-buttons ion-icon{
+    font-size:16px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+.section-buttons{
+    padding: 20px;
+    background-color:none;
+    border-color: var(--button-border-color);
+    border-radius: 5px;
+    font-family:"Open Sans";
+    font-size:12px;
+    font-weight:600;
+    color:var(--button-font-cal);
+}
+.content{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.table{
+    margin: 30px;
+    width: 100%;
+}
+.calendar{
+    margin-left: 20px;
+    margin-right: 20px;
+}

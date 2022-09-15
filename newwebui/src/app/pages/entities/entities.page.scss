@@ -1,0 +1,83 @@
+.page-breadcrumb {
+    display: inline;
+}
+.page-title{
+    color:var(--page-titles);
+    font-family:var(--font-type);
+    font-size:26px;
+    font-weight:lighter;
+    letter-spacing:-1px;
+    line-height:26px;
+    margin:0px 0px 20px;
+}
+a{
+    color:var(--page-bar-letters);
+    display:inline;
+    font-family:var(--font-type);
+    font-size:13px;
+    line-height:18.5714px;
+    text-align:left;
+}
+.page-bar{
+    padding-left: 20px;
+    color:var(--page-bar);
+}
+.page-bar ion-icon{
+    font-size:16px;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
+    color:var(--page-bar-letters);
+}
+.page-title{
+    margin-left: 15px;
+}
+.section-buttons .button{
+    --background:var(--button-color);
+    border-radius: 5px;
+    font-family:var(--font-type);
+    font-size:12px;
+    font-weight:600;
+    box-shadow:var(--shadow-button);
+    color:var(--button-font-color);
+    
+}
+.button{
+    --background:var(--button-color);
+    border-radius: 5px;
+    font-family:var(--font-type);
+    font-size:12px;
+    font-weight:600;
+    box-shadow:var(--shadow-button);
+    color:var(--button-font-color);
+    
+}
+.section-buttons ion-icon{
+    font-size:16px;
+    vertical-align: middle;
+    margin-left: 5px;
+}
+.section-buttons{
+    padding: 20px;
+}
+
+.name{
+    font-size:14px;
+    line-height:20px;
+    margin:10px;
+}
+.title-section{
+    display:inline;
+    font-weight:700;
+    line-height:18px;
+    text-transform:uppercase;
+    margin-left: 10px;
+}
+.content{
+    margin-left:20px;
+    margin-right:20px;
+}
+.table{
+    margin: 30px;
+    width: 100%;
+}

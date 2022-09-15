@@ -1,0 +1,24 @@
+<ion-header>
+</ion-header>
+<ion-content style="top:10%;">
+  <p><b>Ambient:</b>{{config?.ambient}} </p>
+  <p><b>System:</b>{{config?.system}} </p>
+  <!-- with DB data -->
+  <div style="display: flex; width: 100%;" *ngFor="let item of itemsFiltered" >
+    <div style="width: 70%;">
+      <grid-item [proposalId]="config?.proposalId"[type]="item.type" [text]="item.name" [dropdownoptions]="item.dropdownoptions" [sides]="item.sides" [system]="config?.system" [ambient]="config?.ambient"
+       [list]="item.list" [radiobuttonoptions]="item.radiobuttonoptions" [checkboxoptions]="item.checkboxoptions" [inputnumberoptions]="item.inputoptions" (saveProposal)="saveDrop($event)" (saveItem)="addItemvalue($event)"></grid-item>
+      
+    </div>
+    
+    <ion-button *ngIf="config?.system!=='HVAC/Electric'" (click)="addItem(item)"><ion-icon name="add-outline"></ion-icon></ion-button>
+    
+    
+  </div>
+  <section class="section-buttons" >
+    <ion-button class="button" type="submit" (click)="saveProposal(config?.system, config?.ambient)" [routerLink]="['/proposals']" >{{'SUBMIT'|translate}} </ion-button>
+    <ion-button color="light"[routerLink]="['/proposals/fillProposal/:id']">{{'CANCEL'|translate}}</ion-button>
+  </section>
+  
+
+</ion-content>

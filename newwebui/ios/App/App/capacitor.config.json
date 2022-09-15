@@ -1,0 +1,6 @@
+{
+	"appId": "com.rinspector.newwebui",
+	"appName": "newwebui",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

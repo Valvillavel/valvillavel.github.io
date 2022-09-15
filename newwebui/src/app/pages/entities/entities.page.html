@@ -1,0 +1,30 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content style="margin-left: 25px; top:10%;" id="content" >
+    <!-- BEGIN PAGE HEADER-->
+    <ion-text style="margin-left: 50px;">
+        <h3 class="page-title"> {{entity|translate}}
+          <small>{{'HEADER'|translate}}</small>
+        </h3>
+    </ion-text>
+    
+    <section class="content">
+      <section class="name">
+        <ion-icon name="settings-outline"></ion-icon>
+        <ion-label class="title-section">{{'TITLE'|translate}} {{entity|translate}}</ion-label>
+      </section>
+      <section class="section-buttons">
+        <ion-button class="button"[routerLink]="['add',entity]">{{'ADD BUTTON'|translate}}<ion-icon name="add-outline"></ion-icon></ion-button>
+        <ion-button class="button"(click)="openEditForm()" >{{'EDIT BUTTON'|translate}}<ion-icon name="create-outline"></ion-icon></ion-button>
+        <ion-button class="button"(click)="deleteData()">{{'DELETE BUTTON'|translate}}<ion-icon name="trash-outline"></ion-icon></ion-button>
+      </section>
+    </section>
+    
+    <!-- END PAGE HEADER-->
+    <div class="table">
+      <app-data-table [listRows]="list" [columns]="columns" (itemSelect)="getEntitySelected($event)"  [isProp]="prop" [isInsp]="insp" [haveCont]="contract"></app-data-table>
+    </div>
+    
+</ion-content>

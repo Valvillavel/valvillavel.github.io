@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inspection_options",
+  "info": {
+    "name": "inspectionOptions"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "inspectionId": {
+      "model": "inspection",
+      "via": "inspection_options"
+    },
+    "system": {
+      "type": "string"
+    },
+    "ambient": {
+      "type": "string"
+    },
+    "typeMaterial": {
+      "type": "string"
+    },
+    "material": {
+      "type": "string"
+    },
+    "actions": {
+      "type": "string"
+    },
+    "reportText": {
+      "type": "richtext"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/proposal-options",
+      "handler": "proposal-options.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/proposal-options/count",
+      "handler": "proposal-options.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/proposal-options/:id",
+      "handler": "proposal-options.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/proposal-options",
+      "handler": "proposal-options.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/proposal-options/:id",
+      "handler": "proposal-options.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/proposal-options/:id",
+      "handler": "proposal-options.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

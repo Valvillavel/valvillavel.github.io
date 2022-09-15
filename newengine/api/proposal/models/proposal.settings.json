@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proposals",
+  "info": {
+    "name": "proposal",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "workOrder": {
+      "via": "proposals",
+      "model": "work-order"
+    },
+    "proposal_options": {
+      "via": "proposal",
+      "collection": "proposal-options"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/entities/inspectors",
+      "handler": "inspector.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/entities/inspectors/count",
+      "handler": "inspector.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/entities/inspectors/:id",
+      "handler": "inspector.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/entities/inspectors",
+      "handler": "inspector.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/entities/inspectors/:id",
+      "handler": "inspector.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/entities/inspectors/:id",
+      "handler": "inspector.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

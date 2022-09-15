@@ -1,0 +1,66 @@
+{
+  "name": "newengine",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "exportdb": "mysqldump -u rinspector -prinspectorpw --no-data rinspector1 > mydb-schema.sql ",
+    "datadb": "mysqldump -u rinspector -prinspectorpw --no-create-info rinspector1 > mydb-data.sql",
+    "importdb": "mysql -u rinspector -prinspectorpw rinspector1 < mydb-schema.sql",
+    "importsql": "sqlite3 .tmp/data.db < data.sql",
+    "exportsql": "sqlite3 .tmp/data.db .schema > schema.sql",
+    "sqlitetomysql": "sqlite3 .tmp/data.db .dump > sql-data.sql",
+    "debug": "node --inspect=127.0.0.1:9229 ./node_modules/strapi/bin/strapi.js develop",
+    "test": "jest --forceExit --detectOpenHandles",
+    "prettify": "prettier --write .",
+    "dry": "prettier --check ."
+  },
+  "devDependencies": {
+    "jest": "^27.3.1",
+    "nodemailer-mock": "^1.5.11",
+    "sqlite3": "^5.0.2",
+    "supertest": "^6.1.6",
+    "webpack": "^4.46.0"
+  },
+  "dependencies": {
+    "knex": "0.21.18",
+    "mysql": "^2.18.1",
+    "mysqldump": "^3.2.0",
+    "sqlite": "^4.0.23",
+    "strapi": "3.6.8",
+    "strapi-admin": "3.6.8",
+    "strapi-connector-bookshelf": "3.6.8",
+    "strapi-plugin-content-manager": "3.6.8",
+    "strapi-plugin-content-type-builder": "3.6.8",
+    "strapi-plugin-email": "3.6.8",
+    "strapi-plugin-i18n": "3.6.8",
+    "strapi-plugin-upload": "3.6.8",
+    "strapi-plugin-users-permissions": "3.6.8",
+    "strapi-provider-email-nodemailer": "^3.6.8",
+    "strapi-utils": "3.6.8"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "f8ebac6a-55c4-4da7-a53f-6418d0fba798"
+  },
+  "engines": {
+    "node": ">=10.16.0 <=14.x.x",
+    "npm": "^6.0.0"
+  },
+  "license": "MIT",
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      ".tmp",
+      ".cache"
+    ],
+    "testEnvironment": "node",
+    "testTimeout": 1000000
+  }
+}

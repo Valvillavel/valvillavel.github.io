@@ -1,0 +1,115 @@
+<ion-header class="toolbar">
+</ion-header>
+<ion-content>
+  <div class="main_content_div">
+    <div class="user_div">
+      <div class="first_div">
+        <ion-label class="username">{{userdata.username}}</ion-label>
+      </div>
+      <img class="user_back" [src]=image/>
+    </div>
+
+    <div class="content_div">
+      <div class="test_details">
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">
+              <div class="flex_div">
+                <div class="round_div">
+                  <img src="../../../assets/imgs/mencionar.png" />
+                </div>
+                <div class="details">
+                  <ion-label class="bold_lbl">Email</ion-label>
+                  <ion-label class="small_lbl">{{userdata.email}}</ion-label>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="6">
+              <div class="flex_div">
+                <div class="round_div">
+                  <img src="../../../assets/imgs/roles.png" />
+                </div>
+                <div class="details">
+                  <ion-label class="bold_lbl">Role</ion-label>
+                  <ion-label class="small_lbl">{{userdata.role}}</ion-label>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="6">
+              <div class="flex_div">
+                <div class="round_div">
+                  <img src="../../../assets/imgs/coronavirus.png" />
+                </div>
+                <div class="details">
+                  <ion-label class="bold_lbl">Country</ion-label>
+                  <ion-label class="small_lbl">{{userdata.country}}</ion-label>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="6">
+              <div class="flex_div">
+                <div class="round_div">
+                  <img src="../../../assets/imgs/company.png" />
+                </div>
+                <div class="details">
+                  <ion-label class="bold_lbl">Company</ion-label>
+                  <ion-label class="small_lbl">{{userdata.company}}</ion-label>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="6">
+              <div class="flex_div">
+                <div class="round_div">
+                  <img src="../../../assets/imgs/llamada.png" />
+                </div>
+                <div class="details">
+                  <ion-label class="bold_lbl">Phone</ion-label>
+                  <ion-label class="small_lbl">{{userdata.phone}}</ion-label>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="6">
+              <div class="flex_div">
+                <div class="round_div">
+                  <img src="../../../assets/imgs/llamada.png" />
+                </div>
+                <div class="details">
+                  <ion-label class="bold_lbl">Mobile</ion-label>
+                  <ion-label class="small_lbl">{{userdata.mobile}}</ion-label>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <div class="list_div" (click)="OpenEditPage()">
+          <ion-label>Edit profile</ion-label>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+      <div class="select_div">
+        <ion-label>Language</ion-label>
+        <ion-select value="brown" ok-text="Okay" cancel-text="Dismiss" (ionChange)="changeLanguage($event)">
+          <ion-select-option *ngFor="let lang of langs" [value]="lang">
+            {{ lang }}
+          </ion-select-option>
+        </ion-select>
+      </div>
+      <div class="list_div">
+        <ion-label>Settings</ion-label>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+      <div class="list_div">
+        <ion-label>Log out</ion-label>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
+</ion-content>
+
+

@@ -1,0 +1,91 @@
+<ion-header>
+</ion-header>
+
+<ion-content style="margin-left: 25px; top:10%;">
+  
+    <!-- BEGIN PAGE HEADER-->
+    <ion-text style="margin-left: 50px;">
+      <h3 class="page-title"> {{entity|translate}}
+        <small>{{'HEADER'|translate}}</small>
+    </h3>
+    </ion-text>
+    
+    <section class="name">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label *ngIf="!edit" class="title-section">{{'NEW'|translate}}</ion-label>
+      <ion-label *ngIf="edit" class="title-section">{{'EDIT'|translate}}</ion-label>
+    </section>
+
+ 
+  <ion-list  class="ion-form" [formGroup]="workOrderForm" #formDirective="ngForm" >
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="person-outline"></ion-icon>{{'CUSTOMER'|translate}}</ion-label>
+      <ionic-selectable
+        placeholder="{{customerSelected}}"
+        [items]="customersId"
+        itemValueField="id"
+        itemTextField="name"
+        [canSearch]="true"
+        (onChange)="customerChange($event)">
+      </ionic-selectable>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="business-outline"></ion-icon>{{'AGENT'|translate}}</ion-label>
+      <ionic-selectable
+       placeholder="{{agentSelected}}"
+        [items]="agentsId"
+        itemValueField="id"
+        itemTextField="name"
+        [canSearch]="true"
+        (onChange)="agentChange($event)">
+      </ionic-selectable>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="at-outline"></ion-icon>{{'ADDRESS'|translate}}</ion-label>
+      <ion-input placeholder="" formControlName="address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="location-outline"></ion-icon>{{'PROPERTY DESCRIPTION'|translate}}</ion-label>
+      <ion-input placeholder="" formControlName="propertyDescription"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="business-outline"></ion-icon>{{'INSPECTION DATE'|translate}}</ion-label>
+      <ion-input placeholder="" formControlName="inspectionDate" type="date"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="business-outline"></ion-icon>{{'CONTRACT SIGNED'|translate}}</ion-label>
+      <ion-checkbox  formControlName="contractSigned"></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="business-outline"></ion-icon>{{'CONTRACT'|translate}}</ion-label>
+      <!-- <ion-input placeholder="" formControlName="contract"></ion-input> -->
+      <ckeditor #myEditor (change)="onChange($event)" [editor]="Editor" style="width:100%;padding-top: 10px;" data=" 
+        <h2 style='text-align:center'><b>Pre-drywall and construction phase inspection agreement.</b></h2><h2 style='text-align:center'>
+        <p class='p1'><span class='s1'><b>WASI Co</b></span></p></h2><table class='table table-bordered'><tbody><tr style='text-align:center'><td>
+        <h6><span class='s1'>Phone:&nbsp;202-222-8507</span></h6></td><td>
+        <h6><span class='s1'>r.andres.carvallo@gmail.com</span></h6></td><td>
+        <h6><span class='s1' style='text-align:center'>ASHI Member #251893</span></h6></td></tr></tbody></table><p>Client:____________________________________<span style='line-height: 18.5714px;'>____________</span>_____________________ Representative:_________________________________________________________________________</p><p>
+        </p><p class='p1'><span class='s1'>Inspection Address:_________________________________________________________________________________________________________________________________________________</span></p><p class='p1'>
+        </p><p class='p1'><span class='s1'>Inspection Fee:_______________________________&nbsp;</span><span style='line-height: 1.42857;'><u>Cash or Personal Check</u></span></p><p class='p1'>
+        </p><p class='p1'><span class='s1'><b>Please Read Carefully. Your signature is required prior to starting the inspection. This contract contains a limitation of liability and a binding arbitration provision.</b></span></p><p class='p1'><span class='s1'>This service is priced accordingly and can reduce risk but not eliminate it. Crawlspaces will only be inspected after the plastic is installed, if the ground is wet under the house. This is not a warranty or guarantee of the current or future condition of the property or any plan confirmation. This service is simply a way for a client to receive a list of observed problems deemed in need of repair. This service evaluates the quality, workmanship and execution of the construction. This service does not review the design features, dimensions, codes or layout.&nbsp;</span></p><p class='p1'><span class='s1'>Client agrees that the inspector cannot be present during every critical work action and it is entirely possible to have serious problems with a new house at any time in the near or distant future. Client agrees that some items can be installed correctly when viewed and then be damaged or modified by a contractor later. WASI Co is not to be held liable in any form or fashion for anything at all related to this property and is not to be considered a sub-contractor on the project site.&nbsp;</span></p><p class='p1'><span class='s1'>Cash and checks accepted. Fee based on location and size of home. It is the Clients responsibility to review, research and present the report to the appropriate party and to resolve the issue. Any concerns that are not handled by a contractor should be obtained in writing by the Client from the contractor and should include a statement as to why they feel that no action is necessary.&nbsp;</span></p><p class='p1'><span class='s1'>WASI Co is not responsible for any result or cost of anyone utilizing, misinterpreting or ignoring my opinions or any claims of negligence. A report will be provided with digital pictures as needed. Client questions will be answered free via telephone or email. Client agrees not to use this information for any purpose associated with any in-progress litigation and agrees to reimburse WASI Co for any expenses and lost time associated with any involvement thereof in advance.&nbsp;</span></p><p class='p1'><span class='s1'>If legal action is brought against Inspector by the Client and the Client does not prevail, the Client agrees to pay the Inspector compensation for all time spent preparing, communicating, traveling and attending all related events at the rate of one hundred dollars per hour plus all actual legal expenses and costs. Any Client dispute concerning this Agreement or the Inspection shall be resolved by binding, non-appealable arbitration conducted by an arbitrator who is experienced with the home inspection industry and will be selected by mutual agreement by both parties. No insurance is provided and no state office regulates private inspections on construction projects.&nbsp;</span></p><p class='p1'><span class='s1'>The Client agrees that should an arbitrator or court determine that any provision(s) in this Agreement is unenforceable, the remaining portions shall remain in full effect. No other verbal agreement or guarantees are made and this Agreement is the total Agreement. Inspector reserves the right to utilize the court system to counter any claims made by the Client that are not supported by this Agreement in its exact stated conditions.&nbsp;</span></p><p class='p1'><span class='s1'>Client agrees by signing below and/or by making payment of the fee, that you have read, understand and/or agree to this entire Agreement. Client agrees to pay all legal and time expenses related to the collection of all unpaid visits and $25 charge for any returned checks.&nbsp;</span></p><p class='p1'><span class='s1'>
+        </span></p><p class='p2'><span class='s1'>Client agrees to disclose any serious known problems or known potential problems to the inspector.&nbsp;</span></p><p class='p2'><span class='s1'>
+        </span></p><p class='p1'><span class='s1'>Date __________________________&nbsp;</span><span style='line-height: 1.42857;'>Inspection day and time ______________________________</span></p><p class='p1'><span style='line-height: 1.42857;'>Print Name _____________________________________</span></p><p class='p1'><span style='line-height: 1.42857;'><br></span></p><table class='table table-bordered'><tbody><tr><td>X ____________________________________</td><td>_______________</td><td><span style='line-height: 20px;'>X ____________________________</span><br></td><td><span style='line-height: 20px;'>_______________</span><br></td></tr><tr><td>
+        <p class='p1'><span class='s1'>CLIENT or Authorized Representative</span></p></td><td>
+        <p class='p1'><span class='s1'>Date</span></p></td><td>
+        <p class='p1'><span class='s1'>&nbsp;WASI Co.&nbsp;&nbsp;(Company)</span></p></td><td>
+        <p class='p1'><span class='s1'>Date</span></p></td></tr></tbody></table><p class='p1'><span style='line-height: 1.42857;'><br></span></p>
+        "></ckeditor>
+
+    </ion-item>
+    <ion-item>
+      <ion-button color="light" (click)="previewContract()">{{'PREVIEW'|translate}}</ion-button>
+    </ion-item>
+    
+    <section class="section-buttons">
+      <ion-button *ngIf="!edit" class="button" type="submit"[disabled]="workOrderForm.invalid" (click)="saveWorkOrder(workOrderForm.value,formDirective)">{{'SUBMIT'|translate}} </ion-button>
+      <ion-button *ngIf="edit" class="button" type="submit"[disabled]="workOrderForm.invalid" (click)="updateWorkOrder(workOrderForm.value,formDirective)">{{'UPDATE'|translate}} </ion-button>
+      <ion-button color="light"[routerLink]="['/work-orders']">{{'CANCEL'|translate}}</ion-button>
+    </section>
+  </ion-list>
+  
+</ion-content>  

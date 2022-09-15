@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/work-orders",
+      "handler": "work-order.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/work-orders/count",
+      "handler": "work-order.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/work-orders/:id",
+      "handler": "work-order.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/work-orders",
+      "handler": "work-order.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/work-orders/:id",
+      "handler": "work-order.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/work-orders/:id",
+      "handler": "work-order.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

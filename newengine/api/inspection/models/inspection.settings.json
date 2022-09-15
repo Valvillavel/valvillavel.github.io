@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inspections",
+  "info": {
+    "name": "inspection"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "workOrderId": {
+      "model": "work-order"
+    },
+    "inspection_options": {
+      "via": "inspectionId",
+      "collection": "inspection-options"
+    }
+  }
+}

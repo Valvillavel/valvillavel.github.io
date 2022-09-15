@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "report_config_items",
+  "info": {
+    "name": "reportConfigItem",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "system": {
+      "model": "report-config-system",
+      "via": "report_config_items"
+    },
+    "subsystem": {
+      "model": "report-config-subsystem",
+      "via": "report_config_items"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "reportText": {
+      "type": "richtext",
+      "required": true
+    },
+    "defaultImagePath": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "actions": {
+      "type": "string"
+    },
+    "actionsLabel": {
+      "type": "richtext"
+    }
+  }
+}

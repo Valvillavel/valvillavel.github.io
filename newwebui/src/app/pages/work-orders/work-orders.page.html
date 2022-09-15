@@ -1,0 +1,54 @@
+<ion-header>
+</ion-header>
+
+<ion-content style="margin-left: 25px; top:10%;">
+  
+  <!-- BEGIN PAGE HEADER-->
+  <ion-text *ngIf="type === 'list'" style="margin-left: 50px;">
+    <h3 class="page-title">{{'WORK ORDERS'|translate}}
+      <small>{{'HEADER'|translate}}</small>
+  </h3>
+  </ion-text>
+
+  <ion-text *ngIf="type === 'inspections'" style="margin-left: 50px;">
+    <h3 class="page-title"> {{'WORK ORDERS'|translate}}
+      <small>{{'PENDING'|translate}}</small>
+  </h3>
+  </ion-text>
+
+  <ion-text *ngIf="type === 'proposals'" style="margin-left: 50px;">
+    <h3 class="page-title">{{'WORK ORDERS'|translate}}
+      <small>{{'PROPOSALS'|translate}}</small>
+  </h3>
+  </ion-text>
+  
+  <section *ngIf="type === 'list'" class="name">
+    <ion-icon name="settings-outline"></ion-icon>
+    <ion-label class="title-section">{{'TITLE'|translate}} {{'WORK ORDERS'|translate}}</ion-label>
+  </section>
+
+  <section *ngIf="type === 'list'" class="section-buttons">
+    <ion-button class="button"[routerLink]="['add']">{{'ADD BUTTON'|translate}}<ion-icon name="add-outline"></ion-icon></ion-button>
+    <ion-button class="button"(click)="openEditForm()" >{{'EDIT BUTTON'|translate}}<ion-icon name="create-outline"></ion-icon></ion-button>
+    <ion-button class="button"(click)="deleteData()">{{'DELETE BUTTON'|translate}}<ion-icon name="trash-outline"></ion-icon></ion-button>
+  </section>
+
+  <section *ngIf="type === 'inspections'"  class="name">
+    <ion-icon name="settings-outline"></ion-icon>
+    <ion-label class="title-section">{{'PENDING'|translate}}</ion-label>
+    <ion-label class="title-section">{{'WORK ORDERS'|translate}}</ion-label>
+  </section>
+
+  <section *ngIf="type === 'proposals'"  class="name">
+    <ion-icon name="settings-outline"></ion-icon>
+    <ion-label class="title-section">{{'PROPOSALS'|translate}} </ion-label>
+    <ion-label class="title-section">{{'WORK ORDERS'|translate}}</ion-label>
+  </section>
+
+
+<!-- END PAGE HEADER-->
+<div class="table">
+  
+  <app-data-table [listRows]="list" [columns]="columns" (itemSelect)="getEntitySelected($event)" [isProp]="prop" [isInsp]="insp" [haveCont]="contract"></app-data-table>
+</div>
+</ion-content>

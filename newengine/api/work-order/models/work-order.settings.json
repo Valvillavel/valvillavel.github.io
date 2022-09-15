@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "work_orders",
+  "info": {
+    "name": "workOrder",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "customer": {
+      "model": "customer",
+      "via": "workOrders"
+    },
+    "agent": {
+      "model": "agent",
+      "via": "workOrders"
+    },
+    "address": {
+      "type": "text"
+    },
+    "propertyDescription": {
+      "type": "richtext",
+      "required": true
+    },
+    "inspectionDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "contractLocation": {
+      "type": "richtext",
+      "required": true
+    },
+    "proposals": {
+      "via": "workOrder",
+      "collection": "proposal"
+    },
+    "contractSigned": {
+      "type": "boolean"
+    }
+  }
+}

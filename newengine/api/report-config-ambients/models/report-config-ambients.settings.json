@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "report_config_ambients",
+  "info": {
+    "name": "reportConfigAmbients"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "order": {
+      "type": "biginteger",
+      "required": true
+    }
+  }
+}

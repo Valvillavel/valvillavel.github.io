@@ -1,0 +1,94 @@
+<ion-header>
+</ion-header>
+
+<ion-content style="margin-left: 25px; top:10%;">
+  
+    <!-- BEGIN PAGE HEADER-->
+    <ion-text style="margin-left: 50px;">
+      <h3 class="page-title"> {{entity|translate}}
+        <small>{{'HEADER'|translate}}</small>
+    </h3>
+    </ion-text>
+    
+    <section class="name" *ngIf="!edit">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label class="title-section" >{{'NEW '|translate}}{{entity|translate}}</ion-label>
+    </section>
+    <section class="name" *ngIf="edit">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label class="title-section" >{{'EDIT '|translate}}{{entity|translate}}</ion-label>
+    </section>
+
+ 
+  <ion-list  class="ion-form" [formGroup]="registerForm" #formDirective="ngForm" >
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="person-outline"></ion-icon>{{'NAME'|translate}}</ion-label>
+      <div class="input-group">
+        
+        <ion-input placeholder="" autocapitalize inputmode="text" formControlName="name"></ion-input>
+      </div>
+      
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="business-outline"></ion-icon>{{'COMPANY'|translate}}</ion-label>
+      <ion-input placeholder="" formControlName="company"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="at-outline"></ion-icon>{{'EMAIL'|translate}}</ion-label>
+      <ion-input placeholder="" formControlName="email" type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="location-outline"></ion-icon>{{'ADDRESS'|translate}}</ion-label>
+      <ion-input placeholder="" formControlName="address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="business-outline"></ion-icon>{{'COUNTRY'|translate}}</ion-label>
+      <ionic-selectable
+        placeholder="{{countrySelected}}"
+        [items]="countries"
+        itemValueField="id"
+        itemTextField="name"
+        [canSearch]="true"
+        (onChange)="countryChange($event)">
+      </ionic-selectable>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="business-outline"></ion-icon>{{'STATE'|translate}}</ion-label>
+      <ionic-selectable
+      placeholder="{{stateSelected}}"
+        [items]="states"
+        itemValueField="id"
+        itemTextField="name"
+        [canSearch]="true"
+        (onChange)="stateChange($event)">
+      </ionic-selectable>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="business-outline"></ion-icon>{{'CITY'|translate}}</ion-label>
+      <ionic-selectable
+        placeholder="{{citySelected}}"
+        [items]="cities"
+        itemValueField="id"
+        itemTextField="name"
+        [canSearch]="true"
+        (onChange)="cityChange($event)">
+      </ionic-selectable>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="call-outline"></ion-icon>{{'PHONE'|translate}}</ion-label>
+      <ion-input placeholder="" formControlName="phone" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="phone-portrait-outline"></ion-icon>{{'MOBILE'|translate}}</ion-label>
+      <ion-input placeholder="" formControlName="mobile" type="number"></ion-input>
+    </ion-item>
+    
+    <section class="section-buttons">
+      <ion-button *ngIf="!edit" class="button" type="submit"[disabled]="registerForm.invalid" (click)="saveEntity(registerForm.value,formDirective)">{{'SUBMIT'|translate}} </ion-button>
+      <ion-button *ngIf="edit" class="button" type="submit"[disabled]="registerForm.invalid" (click)="editEntity(registerForm.value,formDirective)">{{'UPDATE'|translate}} </ion-button>
+      <ion-button color="light"[routerLink]="['/entities',entity]">{{'CANCEL'|translate}}</ion-button>
+    </section>
+  </ion-list>
+  
+</ion-content>   
+   

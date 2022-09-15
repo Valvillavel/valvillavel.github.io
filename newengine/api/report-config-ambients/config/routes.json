@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/config/ambients",
+      "handler": "report-config-ambients.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/config/ambients/count",
+      "handler": "report-config-ambients.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/config/ambients/:id",
+      "handler": "report-config-ambients.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/config/ambients",
+      "handler": "report-config-ambients.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/config/ambients/:id",
+      "handler": "report-config-ambients.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/config/ambients/:id",
+      "handler": "report-config-ambients.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

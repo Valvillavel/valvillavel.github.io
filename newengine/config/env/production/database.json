@@ -1,0 +1,27 @@
+{
+    "defaultConnection": "default",
+    "connections": {
+      "default": {
+        "connector": "bookshelf",
+        "settings": {
+          "client": "mysql",
+          "host": "127.0.0.1",
+          "port": "3306",
+          "database": "rinspector",
+          "username": "rinspector",
+          "password": "rinspectorpw",
+          "ssl": false
+        },
+        "options": {
+          "ssl": false,
+          "pool": {
+            "min": 0,
+            "max": 15,
+            "idleTimeoutMillis": 30000,
+            "createTimeoutMillis": 30000,
+            "acquireTimeoutMillis": 30000
+          }
+        }
+      }
+    }
+  }

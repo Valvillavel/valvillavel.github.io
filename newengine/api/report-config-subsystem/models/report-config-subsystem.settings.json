@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "report_config_subsystems",
+  "info": {
+    "name": "reportConfigSubsystem"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "system": {
+      "model": "report-config-system",
+      "via": "report_config_subsystems"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "report_config_items": {
+      "via": "subsystem",
+      "collection": "report-config-item"
+    }
+  }
+}

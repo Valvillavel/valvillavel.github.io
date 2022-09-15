@@ -1,0 +1,95 @@
+
+  <ion-header>
+  </ion-header>
+  
+  <ion-content style="margin-left: 25px; top:10%;">
+    
+    <!-- BEGIN PAGE HEADER-->
+    <ion-text style="margin-left: 50px;">
+      <h3 class="page-title"> {{'PROPOSALS'|translate}}
+        <small>{{'REPORT GRID'|translate}}</small>
+    </h3>
+    </ion-text>
+    
+    <section class="name">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label class="title-section">{{'FILL PROPOSAL'|translate}}</ion-label>
+    </section>
+  
+  <table class="table table-bordered">
+    <tr>
+        <td><b>{{'AMBIENT'|translate}}\{{'SYSTEM'|translate}}</b></td>
+        <td class="text-center">{{'HARDSCAPE'|translate}}</td>
+        <td class="text-center">{{'DRAINAGE'|translate}}</td>
+        <td class="text-center">{{'STRUCTURE'|translate}}</td>
+        <td class="text-center">{{'HVAC/ELECTRIC'|translate}}</td>
+    </tr> 
+   
+    <tr>
+        <td>{{'FOUNDATION WALL'|translate}}</td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Foundation wall','Hardscape')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Foundation wall','Drainage')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Foundation wall','Structure')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Foundation wall','HVAC/Electric')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+    </tr>
+    <tr>
+        <td>{{'REAR YARD'|translate}}</td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Rear yard','Hardscape')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Rear yard','Drainage')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" disabled (click)="redirectTo('Rear yard','Structure')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Rear yard','HVAC/Electric')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+    </tr>
+    <tr>
+        <td>{{'FRONT YARD'|translate}}</td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Front yard','Hardscape')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Front yard','Drainage')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" disabled (click)="redirectTo('Front yard','Structure')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Front yard','HVAC/Electric')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+    </tr>
+    <tr>
+        <td>{{'LEFT YARD'|translate}}</td> 
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Left yard','Hardscape')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Left yard','Drainage')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" disabled (click)="redirectTo('Left yard','Structure')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Left yard','HVAC/Electric')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+    </tr>
+    <tr>
+        <td>{{'RIGHT YARD'|translate}}</td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Right yard','Hardscape')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Right yard','Drainage')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" disabled (click)="redirectTo('Right yard','Structure')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Right yard','HVAC/Electric')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+    </tr>
+    <tr>
+      <td>{{'DOWNSPOUT EXTENSIONS'|translate}}</td>
+      <td class="text-center"><ion-button class="item" disabled (click)="redirectTo('Down spout extensions','Hardscape')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+      <td class="text-center"><ion-button class="item" (click)="redirectTo('Down spout extensions','Drainage')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+      <td class="text-center"><ion-button class="item" disabled (click)="redirectTo('Down spout extensions','Structure')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+      <td class="text-center"><ion-button class="item" disabled (click)="redirectTo('Down spout extensions','HVAC/Electric')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+  </tr>
+  <tr>
+    <td>{{'DRIVEWAY'|translate}}</td>
+    <td class="text-center"><ion-button class="item" disabled (click)="redirectTo('Driveway','Hardscape')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+    <td class="text-center"><ion-button class="item" (click)="redirectTo('Driveway','Drainage')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+    <td class="text-center"><ion-button class="item" disabled (click)="redirectTo('Driveway','Structure')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+    <td class="text-center"><ion-button class="item" disabled (click)="redirectTo('Driveway','HVAC/Electric')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+</tr>
+</table>
+<!--NOTES: Review because the database takes time to respond to the request and the table is not displayed correctly-->
+
+<!-- <table class="table table-bordered">
+  <tr>
+    <td>Ambient/System</td>
+      <td class="text-center" *ngFor="let ambient of grids?.ambients">{{ambient}}</td>
+  </tr>
+  <tr *ngFor="let system of grids?.systems">
+    <td>{{system}}</td>
+    <td class="text-center" *ngFor="let ambient of grids?.ambients"><ion-button class="item" (click)="redirectTo(ambient,system)"><ion-icon name="create-outline"></ion-icon></ion-button></td>>
+</tr>
+</table> -->
+<section class="section-buttons" >
+  <ion-button class="button" type="submit" (click)="saveProposalValue()">{{'SUBMIT'|translate}} </ion-button>
+  <ion-button color="light"[routerLink]="['/home']">{{'CANCEL'|translate}}</ion-button>
+</section>
+
+  </ion-content>

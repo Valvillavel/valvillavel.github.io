@@ -1,0 +1,382 @@
+<ion-header>
+</ion-header>
+
+<ion-content style="margin-left: 25px; top:10%;">
+  
+  <!-- BEGIN PAGE HEADER-->
+  <ion-text style="margin-left: 50px;">
+    <h3 class="page-title"> {{'INSPECTIONS'|translate}}
+      <small>{{'REPORT GRID'|translate}}</small>
+  </h3>
+  </ion-text>
+  
+  <section class="name">
+    <ion-icon name="settings-outline"></ion-icon>
+    <ion-label class="title-section"> {{'FILL INSPECTION ITEMS REPORT'|translate}}</ion-label>
+  </section>
+  
+  <div class="row" style="padding:15px"> 
+    <p><b>Ambient:</b>{{config?.ambient}} </p>
+    <p><b>System:</b>{{config?.system}} </p>
+    <ion-list class="ion-form" [formGroup]="inspectionForm" #formDirective="ngForm">
+    <section>
+        <div>
+            <h3 id="typeMaterial">{{'FOUNDATION MATERIAL'|translate}}</h3>
+        </div>
+      </section>
+      <ion-grid>
+        <ion-row>
+          <ion-col >
+                <ion-item class="item">
+                    <ion-checkbox  slot="start" formControlName="material"></ion-checkbox>
+                    <ion-label class="label" id="mat" >{{'POURED CONCRETE'|translate}}</ion-label>
+                </ion-item>
+          </ion-col>
+          <ion-col >
+                <ion-item>
+                    <ion-label class="label">{{'ACTIONS'|translate}}</ion-label>
+                    <ion-select ok-text="Okay" cancel-text="Cancel" formControlName="actions">
+                      <ion-select-option value="Repair">{{'REPAIR'|translate}}</ion-select-option>
+                      <ion-select-option value="Replace">{{'REPLACE'|translate}}</ion-select-option>
+                      <ion-select-option value="Monitor">{{'MONITOR'|translate}}</ion-select-option>
+                      <ion-select-option value="Service">{{'SERVICE'|translate}}</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+          </ion-col>
+          <ion-col size="7" size-lg>
+                <ion-item>
+                    <ion-input formControlName="reportText" placeholder="{{'REPORT TEXT'|translate}}" type="text"></ion-input>
+                  </ion-item>
+          </ion-col>
+          <ion-col >
+            <ion-item>
+                <ion-button expand="full" (click)="f.click()" style="width: 30px;height: 30px;background-color: #c2cad8;">
+                  <ion-icon lazy="true"  name="image" style="font-size: 25px;"></ion-icon>
+                </ion-button>
+                  <input formControlName="image" class="ion-hide" #f type="file" (change)="loadImageFromDevice($event)" id="file-input"
+                    accept="image/png, image/jpeg">
+    
+             </ion-item>
+          </ion-col>
+        </ion-row>
+          <ion-row>
+            <ion-col >
+                  <ion-item>
+                      <ion-checkbox formControlName="material" slot="start"></ion-checkbox>
+                      <ion-label class="label">{{'MASONRY BLOCK'|translate}}</ion-label>
+                  </ion-item>
+            </ion-col>
+            <ion-col >
+              <ion-item>
+                <ion-label class="label">{{'ACTIONS'|translate}}</ion-label>
+                <ion-select ok-text="Okay" cancel-text="Cancel" formControlName="actions">
+                  <ion-select-option value="Repair">{{'REPAIR'|translate}}</ion-select-option>
+                  <ion-select-option value="Replace">{{'REPLACE'|translate}}</ion-select-option>
+                  <ion-select-option value="Monitor">{{'MONITOR'|translate}}</ion-select-option>
+                  <ion-select-option value="Service">{{'SERVICE'|translate}}</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+            <ion-col size="7" size-lg>
+                  <ion-item>
+                      <ion-input formControlName="reportText" placeholder="{{'REPORT TEXT'|translate}}" type="text"></ion-input>
+                    </ion-item>
+            </ion-col>
+            <ion-col >
+              <ion-item>
+                  <ion-button expand="full" (click)="f.click()" style="width: 30px;height: 30px;background-color: #c2cad8;">
+                    <ion-icon lazy="true"  name="image" style="font-size: 25px;"></ion-icon>
+                  </ion-button>
+                    <input class="ion-hide" #f formControlName="image" type="file" (change)="loadImageFromDevice($event)" id="file-input"
+                      accept="image/png, image/jpeg">
+      
+               </ion-item>
+            </ion-col>
+          </ion-row>
+            <ion-row>
+                <ion-col >
+                      <ion-item>
+                          <ion-checkbox  slot="start" formControlName="material"></ion-checkbox>
+                          <ion-label class="label">{{'STONE'|translate}}</ion-label>
+                      </ion-item>
+                </ion-col>
+                <ion-col >
+                  <ion-item>
+                    <ion-label class="label">{{'ACTIONS'|translate}}</ion-label>
+                    <ion-select ok-text="Okay" cancel-text="Cancel" formControlName="actions">
+                      <ion-select-option value="Repair">{{'REPAIR'|translate}}</ion-select-option>
+                      <ion-select-option value="Replace">{{'REPLACE'|translate}}</ion-select-option>
+                      <ion-select-option value="Monitor">{{'MONITOR'|translate}}</ion-select-option>
+                      <ion-select-option value="Service">{{'SERVICE'|translate}}</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="7" size-lg>
+                      <ion-item>
+                          <ion-input formControlName="reportText" placeholder="{{'REPORT TEXT'|translate}}" type="text"></ion-input>
+                        </ion-item>
+                </ion-col>
+                <ion-col >
+                  <ion-item>
+                      <ion-button expand="full" (click)="f.click()" style="width: 30px;height: 30px;background-color: #c2cad8;">
+                        <ion-icon lazy="true"  name="image" style="font-size: 25px;"></ion-icon>
+                      </ion-button>
+                        <input class="ion-hide" #f type="file" formControlName="image" (change)="loadImageFromDevice($event)" id="file-input"
+                          accept="image/png, image/jpeg">
+          
+                   </ion-item>
+                </ion-col>
+              </ion-row>
+                <ion-row>
+                    <ion-col >
+                          <ion-item>
+                              <ion-checkbox  slot="start"></ion-checkbox>
+                              <ion-label class="label">{{'BRICK'|translate}}</ion-label>
+                          </ion-item>
+                    </ion-col>
+                    <ion-col >
+                      <ion-item>
+                        <ion-label class="label">{{'ACTIONS'|translate}}</ion-label>
+                        <ion-select ok-text="Okay" cancel-text="Cancel">
+                          <ion-select-option value="Repair">{{'REPAIR'|translate}}</ion-select-option>
+                          <ion-select-option value="Replace">{{'REPLACE'|translate}}</ion-select-option>
+                          <ion-select-option value="Monitor">{{'MONITOR'|translate}}</ion-select-option>
+                          <ion-select-option value="Service">{{'SERVICE'|translate}}</ion-select-option>
+                        </ion-select>
+                      </ion-item>
+                    </ion-col>
+                    <ion-col size="7" size-lg>
+                          <ion-item>
+                              <ion-input placeholder="{{'REPORT TEXT'|translate}}" type="text"></ion-input>
+                            </ion-item>
+                    </ion-col>
+                    <ion-col >
+                      <ion-item>
+                          <ion-button expand="full" (click)="f.click()" style="width: 30px;height: 30px;background-color: #c2cad8;">
+                            <ion-icon lazy="true"  name="image" style="font-size: 25px;"></ion-icon>
+                          </ion-button>
+                            <input class="ion-hide" #f type="file" (change)="loadImageFromDevice($event)" id="file-input"
+                              accept="image/png, image/jpeg">
+              
+                       </ion-item>
+                    </ion-col>
+                  </ion-row>
+    </ion-grid>
+    <section>
+        <div>
+            <h3>{{'FLOOR CONSTRUCTION'|translate}}</h3>
+        </div>
+      </section>
+      <ion-grid>
+        <ion-row>
+          <ion-col >
+                <ion-item>
+                    <ion-checkbox  slot="start"></ion-checkbox>
+                    <ion-label class="label">{{'JOISTS'|translate}}</ion-label>
+                </ion-item>
+          </ion-col>
+          <ion-col >
+            <ion-item>
+              <ion-label class="label">{{'ACTIONS'|translate}}</ion-label>
+              <ion-select ok-text="Okay" cancel-text="Cancel">
+                <ion-select-option value="Repair">{{'REPAIR'|translate}}</ion-select-option>
+                <ion-select-option value="Replace">{{'REPLACE'|translate}}</ion-select-option>
+                <ion-select-option value="Monitor">{{'MONITOR'|translate}}</ion-select-option>
+                <ion-select-option value="Service">{{'SERVICE'|translate}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+          <ion-col size="7" size-lg>
+                <ion-item>
+                    <ion-input placeholder="{{'REPORT TEXT'|translate}}" type="text"></ion-input>
+                  </ion-item>
+          </ion-col>
+          <ion-col >
+            <ion-item>
+                <ion-button expand="full" (click)="f.click()" style="width: 30px;height: 30px;background-color: #c2cad8;">
+                  <ion-icon lazy="true"  name="image" style="font-size: 25px;"></ion-icon>
+                </ion-button>
+                  <input class="ion-hide" #f type="file" (change)="loadImageFromDevice($event)" id="file-input"
+                    accept="image/png, image/jpeg">
+    
+             </ion-item>
+          </ion-col>
+        </ion-row>
+          <ion-row>
+            <ion-col >
+                  <ion-item>
+                      <ion-checkbox  slot="start"></ion-checkbox>
+                      <ion-label class="label">{{'CONCRETE'|translate}}</ion-label>
+                  </ion-item>
+            </ion-col>
+            <ion-col >
+              <ion-item>
+                <ion-label class="label">{{'ACTIONS'|translate}}</ion-label>
+                <ion-select ok-text="Okay" cancel-text="Cancel">
+                  <ion-select-option value="Repair">{{'REPAIR'|translate}}</ion-select-option>
+                  <ion-select-option value="Replace">{{'REPLACE'|translate}}</ion-select-option>
+                  <ion-select-option value="Monitor">{{'MONITOR'|translate}}</ion-select-option>
+                  <ion-select-option value="Service">{{'SERVICE'|translate}}</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-col>
+            <ion-col size="7" size-lg>
+                  <ion-item>
+                      <ion-input placeholder="{{'REPORT TEXT'|translate}}" type="text"></ion-input>
+                    </ion-item>
+            </ion-col>
+            <ion-col >
+              <ion-item>
+                  <ion-button expand="full" (click)="f.click()" style="width: 30px;height: 30px;background-color: #c2cad8;">
+                    <ion-icon lazy="true"  name="image" style="font-size: 25px;"></ion-icon>
+                  </ion-button>
+                    <input class="ion-hide" #f type="file" (change)="loadImageFromDevice($event)" id="file-input"
+                      accept="image/png, image/jpeg">
+      
+               </ion-item>
+            </ion-col>
+          </ion-row>
+            <ion-row>
+                <ion-col >
+                      <ion-item>
+                          <ion-checkbox  slot="start"></ion-checkbox>
+                          <ion-label class="label">{{'ENGINEERED WOOD'|translate}}</ion-label>
+                      </ion-item>
+                </ion-col>
+                <ion-col >
+                  <ion-item>
+                    <ion-label class="label">{{'ACTIONS'|translate}}</ion-label>
+                    <ion-select ok-text="Okay" cancel-text="Cancel">
+                      <ion-select-option value="Repair">{{'REPAIR'|translate}}</ion-select-option>
+                      <ion-select-option value="Replace">{{'REPLACE'|translate}}</ion-select-option>
+                      <ion-select-option value="Monitor">{{'MONITOR'|translate}}</ion-select-option>
+                      <ion-select-option value="Service">{{'SERVICE'|translate}}</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="7" size-lg>
+                      <ion-item>
+                          <ion-input placeholder="{{'REPORT TEXT'|translate}}" type="text"></ion-input>
+                        </ion-item>
+                </ion-col>
+                <ion-col >
+                  <ion-item>
+                      <ion-button expand="full" (click)="f.click()" style="width: 30px;height: 30px;background-color: #c2cad8;">
+                        <ion-icon lazy="true"  name="image" style="font-size: 25px;"></ion-icon>
+                      </ion-button>
+                        <input class="ion-hide" #f type="file" (change)="loadImageFromDevice($event)" id="file-input"
+                          accept="image/png, image/jpeg">
+          
+                   </ion-item>
+                </ion-col>
+              </ion-row>
+                <ion-row>
+                    <ion-col >
+                          <ion-item>
+                              <ion-checkbox  slot="start"></ion-checkbox>
+                              <ion-label class="label">{{'TRUSSES'|translate}}</ion-label>
+                          </ion-item>
+                    </ion-col>
+                    <ion-col >
+                      <ion-item>
+                        <ion-label class="label">{{'ACTIONS'|translate}}</ion-label>
+                        <ion-select ok-text="Okay" cancel-text="Cancel">
+                          <ion-select-option value="Repair">{{'REPAIR'|translate}}</ion-select-option>
+                          <ion-select-option value="Replace">{{'REPLACE'|translate}}</ion-select-option>
+                          <ion-select-option value="Monitor">{{'MONITOR'|translate}}</ion-select-option>
+                          <ion-select-option value="Service">{{'SERVICE'|translate}}</ion-select-option>
+                        </ion-select>
+                      </ion-item>
+                    </ion-col>
+                    <ion-col size="7" size-lg>
+                          <ion-item>
+                              <ion-input placeholder="{{'REPORT TEXT'|translate}}" type="text"></ion-input>
+                            </ion-item>
+                    </ion-col>
+                    <ion-col >
+                      <ion-item>
+                          <ion-button expand="full" (click)="f.click()" style="width: 30px;height: 30px;background-color: #c2cad8;">
+                            <ion-icon lazy="true"  name="image" style="font-size: 25px;"></ion-icon>
+                          </ion-button>
+                            <input class="ion-hide" #f type="file" (change)="loadImageFromDevice($event)" id="file-input"
+                              accept="image/png, image/jpeg">
+              
+                       </ion-item>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col >
+                            <ion-item>
+                                <ion-checkbox  slot="start"></ion-checkbox>
+                                <ion-label class="label">{{'STEEL JOISTS'|translate}}</ion-label>
+                            </ion-item>
+                      </ion-col>
+                      <ion-col >
+                        <ion-item>
+                          <ion-label class="label">{{'ACTIONS'|translate}}</ion-label>
+                          <ion-select ok-text="Okay" cancel-text="Cancel">
+                            <ion-select-option value="Repair">{{'REPAIR'|translate}}</ion-select-option>
+                            <ion-select-option value="Replace">{{'REPLACE'|translate}}</ion-select-option>
+                            <ion-select-option value="Monitor">{{'MONITOR'|translate}}</ion-select-option>
+                            <ion-select-option value="Service">{{'SERVICE'|translate}}</ion-select-option>
+                          </ion-select>
+                        </ion-item>
+                      </ion-col>
+                      <ion-col size="7" size-lg>
+                            <ion-item>
+                                <ion-input placeholder="{{'REPORT TEXT'|translate}}" type="text"></ion-input>
+                              </ion-item>
+                      </ion-col>
+                      <ion-col >
+                        <ion-item>
+                            <ion-button expand="full" (click)="f.click()" style="width: 30px;height: 30px;background-color: #c2cad8;">
+                              <ion-icon lazy="true"  name="image" style="font-size: 25px;"></ion-icon>
+                            </ion-button>
+                              <input class="ion-hide" #f type="file" (change)="loadImageFromDevice($event)" id="file-input"
+                                accept="image/png, image/jpeg">
+                
+                         </ion-item>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col >
+                              <ion-item>
+                                  <ion-checkbox  slot="start"></ion-checkbox>
+                                  <ion-label class="label">{{'WOOD BEAMS'|translate}}</ion-label>
+                              </ion-item>
+                        </ion-col>
+                        <ion-col >
+                          <ion-item>
+                            <ion-label class="label">{{'ACTIONS'|translate}}</ion-label>
+                            <ion-select ok-text="Okay" cancel-text="Cancel">
+                              <ion-select-option value="Repair">{{'REPAIR'|translate}}</ion-select-option>
+                              <ion-select-option value="Replace">{{'REPLACE'|translate}}</ion-select-option>
+                              <ion-select-option value="Monitor">{{'MONITOR'|translate}}</ion-select-option>
+                              <ion-select-option value="Service">{{'SERVICE'|translate}}</ion-select-option>
+                            </ion-select>
+                          </ion-item>
+                        </ion-col>
+                        <ion-col size="7" size-lg>
+                              <ion-item>
+                                  <ion-input placeholder="{{'REPORT TEXT'|translate}}" type="text"></ion-input>
+                                </ion-item>
+                        </ion-col>
+                        <ion-col >
+                          <ion-item>
+                              <ion-button expand="full" (click)="f.click()" style="width: 30px;height: 30px;background-color: #c2cad8;">
+                                <ion-icon lazy="true"  name="image" style="font-size: 25px;"></ion-icon>
+                              </ion-button>
+                                <input class="ion-hide" #f type="file" (change)="loadImageFromDevice($event)" id="file-input"
+                                  accept="image/png, image/jpeg">
+                  
+                           </ion-item>
+                        </ion-col>
+                      </ion-row>
+    </ion-grid>
+    <section class="section-buttons">
+      <ion-button class="button" type="submit" [disabled]="inspectionForm.invalid" (click)="saveInspection(inspectionForm.value,formDirective)">{{'SUBMIT'|translate}}</ion-button>
+      <ion-button color="light" [routerLink]="['/fillReport/:id']">{{'CANCEL'|translate}}</ion-button>
+    </section>
+  </ion-list>
+  </div>
+  </ion-content>

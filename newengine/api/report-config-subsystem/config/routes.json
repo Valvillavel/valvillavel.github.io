@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/config/subsystems",
+      "handler": "report-config-subsystem.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/config/subsystems/count",
+      "handler": "report-config-subsystem.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/config/subsystems/:id",
+      "handler": "report-config-subsystem.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/config/subsystems",
+      "handler": "report-config-subsystem.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/config/subsystems/:id",
+      "handler": "report-config-subsystem.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/config/subsystems/:id",
+      "handler": "report-config-subsystem.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+<ion-app>
+<ion-header>
+</ion-header>
+
+<ion-content style="margin-left: 25px; top:10%;">
+  
+  <!-- BEGIN PAGE HEADER-->
+  <ion-text style="margin-left: 50px;">
+    <h3 class="page-title">Inspections
+      <small>Report grid</small>
+  </h3>
+  </ion-text>
+  
+  <section class="name">
+    <ion-icon name="settings-outline"></ion-icon>
+    <ion-label class="title-section">FILL REPORT</ion-label>
+  </section>
+
+<!-- END PAGE HEADER-->
+
+  <!-- <ion-grid>
+    
+    <ion-row>
+      <ion-col>
+        <div></div>
+      </ion-col>
+      <ion-col>
+        <div>Cooling</div>
+      </ion-col>
+      <ion-col>
+        <div>Electrical</div>
+      </ion-col>
+      <ion-col>
+        <div>Exterior</div>
+      </ion-col>
+      <ion-col>
+        <div>Heating</div>
+      </ion-col>
+      <ion-col>
+        <div>Insulation</div>
+      </ion-col>
+      <ion-col>
+        <div>Interior</div>
+      </ion-col>
+      <ion-col>
+        <div>Plumbing</div>
+      </ion-col>
+      <ion-col>
+        <div>Roofing</div>
+      </ion-col>
+      <ion-col>
+        <div>Structure</div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-column><div>General</div></ion-column>
+      <ion-column><div><ion-icon name="create-outline"></ion-icon></div></ion-column>
+      <ion-column><div><ion-icon name="create-outline"></ion-icon></div></ion-column>
+      <ion-column><div><ion-icon name="create-outline"></ion-icon></div></ion-column>
+      <ion-column><div><ion-icon name="create-outline"></ion-icon></div></ion-column>
+      <ion-column><div><ion-icon name="create-outline"></ion-icon></div></ion-column>
+      <ion-column><div><ion-icon name="create-outline"></ion-icon></div></ion-column>
+      <ion-column><div><ion-icon name="create-outline"></ion-icon></div></ion-column>
+      <ion-column><div><ion-icon name="create-outline"></ion-icon></div></ion-column>
+      <ion-column><div><ion-icon name="create-outline"></ion-icon></div></ion-column>
+    </ion-row>
+  </ion-grid> -->
+  <table class="table table-bordered">
+    <tr>
+        <td></td>
+        <td class="text-center">{{'COOLING'|translate}} </td>
+        <td class="text-center">{{'ELECTRICAL'|translate}} </td>
+        <td class="text-center">{{'DRAINAGE'|translate}} </td>
+        <td class="text-center">{{'HEATING'|translate}} </td>
+        <td class="text-center">{{'INSULATION'|translate}} </td>
+        <td class="text-center">{{'INTERIOR'|translate}} </td>
+        <td class="text-center">{{'PLUMBING'|translate}} </td>
+        <td class="text-center">{{'ROOFING'|translate}} </td>
+        <td class="text-center">{{'STRUCTURE'|translate}} </td>
+    </tr>
+    <tr>
+        <td>{{'KITCHEN'|translate}}</td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Kitchen','cooling')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Kitchen','Electrical')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Kitchen','Drainage')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Kitchen','Heating')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Kitchen','Insulation')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Kitchen','Interior')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Kitchen','Plumbing')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Kitchen','Roofing')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Kitchen','Structure')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+    </tr>
+    <tr>
+        <td>{{'DINNER ROOM'|translate}}</td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('DinnerRoom','cooling')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('DinnerRoom','Electrical')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('DinnerRoom','Drainage')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('DinnerRoom','Heating')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('DinnerRoom','Insulation')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('DinnerRoom','Interior')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('DinnerRoom','Plumbing')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('DinnerRoom','Roofing')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('DinnerRoom','Structure')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+    </tr>
+    <tr>
+        <td>{{'LIVING ROOM'|translate}}</td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('LivingRoom','cooling')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('LivingRoom','Electrical')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('LivingRoom','Drainage')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('LivingRoom','Heating')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('LivingRoom','Insulation')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('LivingRoom','Interior')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('LivingRoom','Plumbing')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('LivingRoom','Roofing')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('LivingRoom','Structure')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+    </tr>
+    <tr>
+        <td>{{'MASTER BEDROOM'|translate}}</td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('MasterBedroom','cooling')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('MasterBedroom','Electrical')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('MasterBedroom','Drainage')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('MasterBedroom','Heating')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('MasterBedroom','Insulation')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('MasterBedroom','Interior')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('MasterBedroom','Plumbing')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('MasterBedroom','Roofing')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('MasterBedroom','Structure')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+    </tr>
+    <tr>
+        <td>{{'BEDROOM'|translate}} 2</td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom2','cooling')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom2','Electrical')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom2','Drainage')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom2','Heating')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom2','Insulation')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom2','Interior')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom2','Plumbing')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom2','Roofing')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom2','Structure')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+    </tr>
+    <tr>
+        <td>{{'BEDROOM'|translate}} 3</td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom3','cooling')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom3','Electrical')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom3','Drainage')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom3','Heating')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom3','Insulation')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom3','Interior')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom3','Plumbing')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom3','Roofing')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+        <td class="text-center"><ion-button class="item" (click)="redirectTo('Bedroom3','Structure')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+    </tr>
+    <tr>
+      <td>{{'EXTERIOR'|translate}}</td>
+      <td class="text-center"><ion-button class="item" (click)="redirectTo('Exterior','cooling')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+      <td class="text-center"><ion-button class="item" (click)="redirectTo('Exterior','Electrical')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+      <td class="text-center"><ion-button class="item" (click)="redirectTo('Exterior','Drainage')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+      <td class="text-center"><ion-button class="item" (click)="redirectTo('Exterior','Heating')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+      <td class="text-center"><ion-button class="item" (click)="redirectTo('Exterior','Insulation')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+      <td class="text-center"><ion-button class="item" (click)="redirectTo('Exterior','Interior')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+      <td class="text-center"><ion-button class="item" (click)="redirectTo('Exterior','Plumbing')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+      <td class="text-center"><ion-button class="item" (click)="redirectTo('Exterior','Roofing')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+      <td class="text-center"><ion-button class="item" (click)="redirectTo('Exterior','Structure')"><ion-icon name="create-outline"></ion-icon></ion-button></td>
+  </tr>
+</table>
+</ion-content>
+</ion-app>

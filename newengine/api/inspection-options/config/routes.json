@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/inspection-options",
+      "handler": "inspection-options.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/inspection-options/count",
+      "handler": "inspection-options.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/inspection-options/:id",
+      "handler": "inspection-options.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/inspection-options",
+      "handler": "inspection-options.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/inspection-options/:id",
+      "handler": "inspection-options.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/inspection-options/:id",
+      "handler": "inspection-options.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

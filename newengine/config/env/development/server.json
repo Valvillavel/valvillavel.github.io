@@ -1,0 +1,16 @@
+{
+  "host": "localhost",
+  "port": 1337,
+  "proxy": {
+    "enabled": false
+  },
+  "cron": {
+    "enabled": false
+  },
+  "admin": {
+    "autoOpen": true,
+    "auth": {
+      "secret": "${process.env.ADMIN_JWT_SECRET} || 68e5f91baf87856d9dbe88a01cff646a"
+    }
+  }
+}

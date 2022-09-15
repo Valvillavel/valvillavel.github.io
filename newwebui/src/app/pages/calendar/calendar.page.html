@@ -1,0 +1,99 @@
+<ion-header>
+</ion-header>
+
+<ion-content>
+  <ion-text style="margin-left: 50px; top:10%;">
+    <h3 class="page-title">{{'MYCALENDAR'|translate}}</h3>
+</ion-text>
+<ion-toolbar *ngIf="!showAddEvent" >
+  <section class="section-buttons" >
+    <ion-button class="button" (click)="today()">{{'TODAY'|translate}}</ion-button> 
+    <ion-button class="button" (click)="changeMode('month')">{{'MONTH'|translate}}</ion-button>
+    <ion-button class="button" (click)="changeMode('week')" >{{'WEEK'|translate}}</ion-button>
+    <ion-button class="button" (click)="changeMode('day')" >{{'DAY'|translate}}</ion-button>
+  </section>
+  <section slot="end" class="section-buttons" >
+  <ion-button class="button"  (click)="removeEvents()" >
+    {{'REMOVEEVENTS'|translate}}
+  </ion-button>
+</section>
+</ion-toolbar>
+
+  <div class="content" *ngIf="showAddEvent">
+    <ion-item>
+      <ion-label><b>{{'TITLEEVENT'|translate}} :</b></ion-label>
+      <ion-input type="text" placeholder="Title" [(ngModel)]="newEvent.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>{{'DESCRIPTION'|translate}} :</b></ion-label>
+      <ion-input type="text" placeholder="Description" [(ngModel)]="newEvent.description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>{{'SATARTDATE'|translate}} :</b></ion-label>
+      <ion-datetime doneText="OK" cancelText="Cancel" displayFormat="DD/MM/YYYY
+      HH:mm" pickerFormat="MMM DHH:mm" [(ngModel)]="newEvent.startTime" [min]="minDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>{{'ENDDATE'|translate}} :</b></ion-label>
+      <ion-datetime doneText="OK" cancelText="Cancel" displayFormat="DD/MM/YYYY
+      HH:mm" pickerFormat="MMM DHH:mm" [(ngModel)]="newEvent.endTime" [min]="minDate"></ion-datetime>
+    </ion-item>
+    <ion-button class="button" size="large" (click)="addEvent()">{{'ADDEVENT'|translate}}</ion-button>
+  </div>
+
+  <ion-row  *ngIf="!showAddEvent">
+    <ion-col size="2">
+      <ion-button fill="clear" color="dark" (click)="back()">
+        <ion-icon name="chevron-back-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-col>
+
+    <ion-col size="8" class="ion-text-center">
+      <h2>{{currentMonth}}</h2>
+    </ion-col>
+
+    <ion-col size="2">
+      <ion-button fill="clear" color="dark" (click)="next()">
+        <ion-icon name="chevron-forward-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+    <calendar 
+      *ngIf="!showAddEvent"
+      id="myCal"
+      [eventSource]="allEvents"
+      [calendarMode]="calendar.mode"
+      [currentDate]="calendar.currentDate"
+      (onEventSelected)="onEventSelected($event)"
+      (onTitleChanged)="onViewTitleChanged($event)"
+      [timeInterval]="30"
+      startHours="0"
+      endHours="23"
+      step="30"
+      startingDayWeek="1"
+      notEventLabel="There is no Event to display"
+      [monthviewDisplayEventTemplate]="template"
+      [locale] =" calendar.locale"
+    ></calendar>
+  
+
+  <ion-fab vertical="bottom" horizontal="end" slot='fixed'>
+    <ion-fab-button class="button" (click)="showHideForm()">
+      <ion-icon *ngIf="!showAddEvent" name="add"></ion-icon>
+      <ion-icon *ngIf="showAddEvent" name="close"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+
+  <ng-template  #template let-view="view" let-row="row" let-col="col" >
+    <div [class.with-event]="view.dates[row*7+col].events.length">
+      {{view.dates[row*7+col].label}}
+      <div class="indicator-container" color="primary">
+        <div class="event-indicator" *ngFor="let e of view.dates[row*7+col].events"></div>
+      </div>
+    </div>
+  </ng-template>
+  
+
+</ion-content>
+

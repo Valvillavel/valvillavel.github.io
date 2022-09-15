@@ -1,0 +1,27 @@
+@media screen and (max-width: 800px) {
+    .desktop-hidden {
+      display: initial;
+    }
+    .mobile-hidden {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 800px) {
+    .desktop-hidden {
+      display: none;
+    }
+    .mobile-hidden {
+      display: initial;
+    }
+  }
+  .input-search{
+    width:100%;
+    align-self: right;
+    border-radius: 5px;
+    width: 20%;
+  }
+  .fake-link {
+    color: var(--link-color) ;
+    text-decoration: underline;
+    cursor: pointer;
+  }

@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title>{{'LOGIN'|translate}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-item >
+    <ion-label position="floating">{{'EMAIL'|translate}}</ion-label>
+    <ion-input [(ngModel)]="email" type="text" required></ion-input>
+  </ion-item>
+
+  <ion-item >
+    <ion-label position="floating">{{'PASSWORD'|translate}}</ion-label>
+    <ion-input [(ngModel)]="password" type="text" required></ion-input>
+  </ion-item>
+
+  <ion-button class="ion-margin-top" type="submit" expand="block" color="dark" (click)="onSubmit()">
+    {{'SIGNIN'|translate}}
+  </ion-button>
+
+  <ion-item  class="ion-text-center">
+    <ion-label>{{'OR'|translate}}</ion-label>
+  </ion-item>
+
+  <ion-button color="dark" expand="block" fill="outline" [routerLink]="['signup']">{{'CREATE ACCOUNT'|translate}}</ion-button>
+</ion-content>

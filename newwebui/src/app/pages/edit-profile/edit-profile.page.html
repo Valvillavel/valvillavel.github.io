@@ -1,0 +1,104 @@
+<ion-header>
+</ion-header>
+
+<ion-content class="profile">
+  <ion-card no-margin>
+    <ion-card-content class="bg-profile">
+      <img [src]=image/>
+      <h1 class="fw500">{{user.username}}</h1>
+      <h1 class="fw500">{{entity}}</h1>
+      <h2 color="light" margin-bottom>Edit Profile</h2>
+    </ion-card-content>
+  
+    <ion-grid fixed no-padding>
+      <ion-row>
+        <ion-col size="12" padding>
+
+          <ion-list margin-bottom [formGroup]="userForm" #formDirective="ngForm">
+            <ion-list-header color="light">
+              <ion-label class="fw700">Form</ion-label>
+            </ion-list-header>
+
+            <ion-item>
+              <ion-label color="dark" position="stacked">Full Name:</ion-label>
+              <ion-input inputmode="text" placeholder="Ex..: Joe Doe" formControlName="name"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="dark" position="stacked">Company:</ion-label>
+              <ion-input inputmode="email" placeholder="Ex.: ACME" formControlName="company"></ion-input>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label color="dark" position="stacked">Email:</ion-label>
+              <ion-input inputmode="email" placeholder="Ex.: joe@doe.com" formControlName="email"></ion-input>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label color="dark" position="stacked">Address:</ion-label>
+              <ion-input inputmode="text" placeholder="Ex.: Abey Road 5" formControlName="address"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="dark">Country</ion-label>
+              <ionic-selectable
+                placeholder="{{countrySelected}}"
+                [items]="countries"
+                itemValueField="id"
+                itemTextField="name"
+                [canSearch]="true"
+                (onChange)="countryChange($event)">
+              </ionic-selectable>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label color="dark">State</ion-label>
+              <ionic-selectable
+                placeholder="{{stateSelected}}"
+                [items]="states"
+                itemValueField="id"
+                itemTextField="name"
+                [canSearch]="true"
+                (onChange)="stateChange($event)">
+              </ionic-selectable>
+            </ion-item>
+    
+            <ion-item>
+              <ion-label color="dark">City</ion-label>
+              <ionic-selectable
+                placeholder="{{citySelected}}"
+                [items]="cities"
+                itemValueField="id"
+                itemTextField="name"
+                [canSearch]="true"
+                (onChange)="cityChange($event)">
+              </ionic-selectable>
+            </ion-item>
+
+            <ion-item>
+              <ion-label color="dark" position="stacked">Phone:</ion-label>
+              <ion-input inputmode="text" placeholder="Ex.: +1 (618) 123..." formControlName="phone" type="number"></ion-input>
+            </ion-item>
+             <ion-item>
+              <ion-label color="dark" position="stacked">Mobile:</ion-label>
+              <ion-input inputmode="text" placeholder="Ex.: +1 (618) 123..." formControlName="mobile" type="number"></ion-input>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label position="stacked"><ion-icon name="image-outline"></ion-icon>Avatar</ion-label>
+              <br>
+              <img [src]=image/>
+              <ion-input (change)="captureFile($event)" type="file" placeholder="file" formControlName="avatar"></ion-input>
+              <ion-label position="stacked">{{userdata.avatar}}</ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    <section class="section-buttons">
+      <ion-button class="button" type="submit" (click)="editUser(userForm.value,formDirective)">Submit</ion-button>
+      <ion-button color="light">Cancel</ion-button>
+    </section>
+  </ion-card>
+</ion-content>

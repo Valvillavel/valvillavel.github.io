@@ -1,0 +1,79 @@
+<ion-header>
+</ion-header>
+
+<ion-content style="margin-left: 25px; top:10%;">
+  
+    <!-- BEGIN PAGE HEADER-->
+    <ion-text style="margin-left: 50px;">
+      <h3 class="page-title"> {{report|translate}}
+        <small>{{'HEADER'|translate}}</small>
+    </h3>
+    </ion-text>
+    
+    <section class="name">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label *ngIf="!editing" class="title-section">{{'NEW '|translate}} {{report|translate}}</ion-label>
+      <ion-label *ngIf="editing" class="title-section">{{'EDIT '|translate}} {{report|translate}}</ion-label>
+    </section>
+
+ 
+  <ion-list  class="ion-form" [formGroup]="reportForm" #formDirective="ngForm" 
+  (ngSubmit)="editing? editReport(reportForm.value,formDirective) : saveReport(reportForm.value,formDirective)">
+    <ion-item>
+      <ion-label position="stacked"><ion-icon name="globe-outline"></ion-icon>{{'NAME'|translate}}</ion-label>
+      <ion-input placeholder="" autocapitalize inputmode="text" formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item  *ngIf="report==='ambients'">
+      <ion-label position="stacked"><ion-icon name="reader-outline"></ion-icon>{{'ORDER'|translate}}</ion-label>
+      <ion-input placeholder="" formControlName="order" type="number"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="report==='subsystems'||report==='items'">
+      <ion-label position="stacked"><ion-icon name="globe-outline"></ion-icon>{{'SYSTEM'|translate}}</ion-label>
+      <ionic-selectable
+        placeholder="{{systemSelected}}"
+        [items]="syss"
+        itemValueField="id"
+        itemTextField="name"
+        [canSearch]="true"
+        (onChange)="systemChange($event)">
+      </ionic-selectable>
+    </ion-item>
+    <ion-item *ngIf="report==='items'">
+      <ion-label position="stacked"><ion-icon name="globe-outline"></ion-icon>{{'SUBSYSTEM'|translate}}</ion-label>
+      <ionic-selectable
+        placeholder="{{subsystemSelected}}"
+        [items]="subs"
+        itemValueField="id"
+        itemTextField="name"
+        [canSearch]="true"
+        (onChange)="subsystemChange($event)">
+      </ionic-selectable>
+    </ion-item>
+    <ion-item *ngIf="report==='items'">
+      <ion-label position="stacked"><ion-icon name="reader-outline"></ion-icon>{{'ACTIONS'|translate}}</ion-label>
+      <ion-input placeholder="" formControlName="actions"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="report==='items'">
+      <ion-label position="stacked"><ion-icon name="reader-outline"></ion-icon>{{'ACTION LABEL'|translate}}</ion-label>
+      <ion-input placeholder="" formControlName="actionLabel"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="report==='items'">
+      <ion-label position="stacked"><ion-icon name="documents-outline"></ion-icon>{{'TEXT REPORT'|translate}}</ion-label>
+      <ion-input placeholder="" formControlName="reportText"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="report==='items'">
+      <ion-label position="stacked"><ion-icon name="image-outline"></ion-icon>{{'DEFAULT IMAGE'|translate}}</ion-label>
+      <br>
+      <img [src]=image/>
+      <ion-input (change)="captureFile($event)" type="file" placeholder="file" formControlName="defaultImagePath"></ion-input>
+    
+    </ion-item>
+
+    <section class="section-buttons">
+      <ion-button *ngIf="!editing" class="button" type="submit"[disabled]="reportForm.invalid" (click)="saveReport(reportForm.value,formDirective)">{{'SUBMIT'|translate}} </ion-button>
+      <ion-button *ngIf="editing" class="button" type="submit"[disabled]="reportForm.invalid" (click)="editReport(reportForm.value,formDirective)">{{'UPDATE'|translate}} </ion-button>
+      <ion-button color="light"[routerLink]="['/config',report]">{{'CANCEL'|translate}}</ion-button>
+    </section>
+  </ion-list>
+  
+</ion-content>   

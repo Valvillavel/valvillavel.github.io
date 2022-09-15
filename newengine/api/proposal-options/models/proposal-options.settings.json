@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proposal_options",
+  "info": {
+    "name": "proposalOptions",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ambient": {
+      "type": "string"
+    },
+    "system": {
+      "type": "string"
+    },
+    "dataSelected": {
+      "type": "json"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "proposal": {
+      "model": "proposal",
+      "via": "proposal_options"
+    }
+  }
+}

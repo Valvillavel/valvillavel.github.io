@@ -1,0 +1,84 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+.split-pane-visible >.split-pane-side {
+    min-width: 200px!important;
+    max-width: 250px!important;
+  }
+.cal-modal {
+  --height: 80%;
+  --border-radius: 10px;
+  padding: 25px;
+}
+:root{
+  --font-color:white;
+  --menu-font-color:white;
+  --menu-color-background:#495663;
+  --menu-color-toolbar:#14b9d6;
+  --icon-color:#14b9d6;
+  --selected-menu-color:#14b9d6;
+  --link-color:rgb(44, 164, 243);
+  --button-color:#14b9d6;
+  --button-border-color:#438296;
+  --button-font-color:white;
+  --shadow-button:#000000 0px 1px 3px 0px,;
+  --side-color: #495663;
+  --selected-side-selector:#14b9d6;
+  --page-titles:#666666;
+  --page-bar-letters:#888888;
+  --page-bar: #333333;
+  --event-calendar:#14b9d6;
+  --date-selected:#2ea0b4;
+  --date-selected-letter:white;
+  --date-event:#097486;
+  --button-color-calendar:#438296;
+  --button-border-calendar:#14b9d6;
+  --button-font-cal:black;
+  --font-type: 'Open Sans';
+  --home-content-color:#14b9d6;
+  --home-letters-color:#fff;
+  --home-button-letter:#2855ae;
+  --home-image-border:2px solid #fff;
+  --button-calendar-color:#fff;
+  --button-calendar-border:1px solid #2855ae;
+  --home-color-icon:#495663;
+  --home-color-h6:#ccc;
+  --home-buttomdiv:#fff;
+  --home-box:#e6e7ee;
+  --home-box-icon:#495663;
+  --home-box-p:#2855ae;
+  --page-ioncol:#f7f7f7;
+  --page-ioncol-border:solid 1px #ddd;
+  --page-ioncol-icon:#14b9d6;
+  --inspection-item-icon: #14b9d6;
+  --inspection-item-label:#333333;
+
+
+}
